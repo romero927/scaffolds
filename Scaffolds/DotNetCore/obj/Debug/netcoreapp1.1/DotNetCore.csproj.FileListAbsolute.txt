@@ -1,0 +1,8 @@
+/Users/kromero/Documents/dev/kgromero.us/DotNetCore/bin/Debug/netcoreapp1.1/DotNetCore.deps.json
+/Users/kromero/Documents/dev/kgromero.us/DotNetCore/bin/Debug/netcoreapp1.1/DotNetCore.runtimeconfig.json
+/Users/kromero/Documents/dev/kgromero.us/DotNetCore/bin/Debug/netcoreapp1.1/DotNetCore.runtimeconfig.dev.json
+/Users/kromero/Documents/dev/kgromero.us/DotNetCore/bin/Debug/netcoreapp1.1/DotNetCore.dll
+/Users/kromero/Documents/dev/kgromero.us/DotNetCore/bin/Debug/netcoreapp1.1/DotNetCore.pdb
+/Users/kromero/Documents/dev/kgromero.us/DotNetCore/obj/Debug/netcoreapp1.1/DotNetCore.AssemblyInfo.cs
+/Users/kromero/Documents/dev/kgromero.us/DotNetCore/obj/Debug/netcoreapp1.1/DotNetCore.dll
+/Users/kromero/Documents/dev/kgromero.us/DotNetCore/obj/Debug/netcoreapp1.1/DotNetCore.pdb
