@@ -460,7 +460,7 @@ class App extends Component {
                             <ul>
                               <li><a href="mailto:kgromero@gmail.com" target="_top">kgromero@gmail.com</a></li>
                               <li><a href="https://www.linkedin.com/in/kyleromero/">LinkedIn</a></li>
-                              <li><a href="https://github.com/romero927">Github</a> <i>Not Active Currently</i></li>
+                              <li><a href="https://github.com/romero927">Github</a></li>
                             </ul>
                           </td>
                         </tr>
