@@ -2,6 +2,7 @@
   "short_name": "kgromero",
   "name": "Kyle Romero Information",
   "start_url": "./index.html",
+  "favicon": "./favicon.ico",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
