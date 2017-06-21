@@ -8,8 +8,8 @@ class App extends Component {
       <div className="App">
         <Grid>
           <Row>
-            <Col xsHidden smHidden md={1} lg={2} />
-            <Col xs={12} sm={12} md={10} lg={8}>
+            <Col xsHidden smHidden md={1} lg={1} />
+            <Col xs={12} sm={12} md={10} lg={10}>
                 <Panel>
                   <h1>Kyle Romero</h1>
                   <p>Senior Software Developer with 10 years experience living in Houston, TX.</p>
@@ -110,7 +110,7 @@ class App extends Component {
                             React,
                             React-Router,
                             Redux,
-                            Redux-Thunk,
+                            Redux-Thunk,<br/>
                             Webpack,
                             Babel,
                             SuperAgent,
@@ -505,7 +505,7 @@ class App extends Component {
                 </div>
               </Panel>
             </Col>
-            <Col xsHidden smHidden md={1} lg={2} />
+            <Col xsHidden smHidden md={1} lg={1} />
           </Row>
         </Grid>
       </div>
