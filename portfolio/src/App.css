@@ -14,7 +14,7 @@ tbody > tr{
   background-color: #404040
 }
 
-tr > td{
+.FiftyPercent > tr > td{
   width: 50%;
 }
 

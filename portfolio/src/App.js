@@ -25,7 +25,7 @@ class App extends Component {
                             </th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody className="FiftyPercent">
                         <tr className="Table-Body">
                           <td>
                             <strong>.NET</strong>
@@ -85,7 +85,7 @@ class App extends Component {
                           </th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody className="FiftyPercent">
                         <tr>
                           <td>
                             <strong>Microsoft</strong>
@@ -129,7 +129,7 @@ class App extends Component {
                           </th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody className="FiftyPercent">
                         <tr>
                           <td>
                             <strong>Source Control</strong>
@@ -438,7 +438,7 @@ class App extends Component {
                           </th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody className="FiftyPercent">
                         <tr>
                           <td>
                               <Image src="./kgromero.png" responsive thumbnail/>
