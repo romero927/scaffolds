@@ -14,6 +14,10 @@ tbody > tr{
   background-color: #404040
 }
 
+tr > td{
+  width: 50%;
+}
+
 .App-body{
   text-align: left;
 }
