@@ -6,12 +6,12 @@
 
 .Table-header
 {
-   background-color: #303030;
+   background-color: #606060;
   /*color: white;*/
 }
 
 tbody > tr{
-  background-color: #252525
+  background-color: #404040
 }
 
 .FiftyPercent > tr > td{
