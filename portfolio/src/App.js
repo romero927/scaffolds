@@ -54,13 +54,13 @@ class App extends Component {
                             <Image src="./kgromero.png" responsive thumbnail />
                           </td>
                           <td>
-                            Hello! My name is Kyle Romero.<br />
-                            I am a full-stack senior software developer living in Houston, Texas.<br />
-                            I have a Bachelor's Degree in Computer Engineering from Texas Tech University<br />
-                            I have worked in the IT field since 2007 as a software engineer.<br />
-                            Currently, I am a team lead and senior developer at Worldwide Machinery.<br />
-                            My last two jobs I have been in a leadership role, helping to drive the success of the team. <br />
-                            I have extensive knowledge of all aspects of a succesful software project, and have used many different technologies over the years.<br />
+                            Hello! My name is Kyle Romero.
+                            I am a full-stack senior software developer living in Houston, Texas.
+                            I have a Bachelor's Degree in Computer Engineering from Texas Tech University
+                            I have worked in the IT field since 2007 as a software engineer.
+                            Currently, I am a team lead and senior developer at Worldwide Machinery.
+                            My last two jobs I have been in a leadership role, helping to drive the success of the team.
+                            I have extensive knowledge of all aspects of a succesful software project, and have used many different technologies over the years.
                           </td>
                         </tr>
                         <tr>
@@ -95,20 +95,20 @@ class App extends Component {
                             <strong>Continued Learning</strong>
                           </td>
                           <td>
-                            Currently, I am doing my best to keep up with the quickly changing development landscape. <br />
+                            Currently, I am doing my best to keep up with the quickly changing development landscape.<br />
                             <ul>
                               <li>I am very interested in Python, .NET Core, GOLang, Rust, Clojure, and Vue.js.</li>
-                              <li>I try to keep up-to-date using aggregators such as Hacker News.</li>
-                              <li>I use Pluralsight to keep refreshed on various topics</li>
+                              <li>I try to keep up-to-date using aggregators such as Hacker News and Programming Sub-Reddits.</li>
+                              <li>I use Pluralsight to keep refreshed on various topics, and attempt small side projects to learn new concepts.</li>
                             </ul>
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <strong>Note</strong>
+                            <strong>Technical Note</strong>
                           </td>
                           <td>
-                            This site was built using the fantastic Create-React-App and React-Bootstrap libraries.<br />
+                            This site was built using the Create-React-App and React-Bootstrap libraries.<br />
                             It is hosted on Digital Ocean using PM2 Serve and NGINX Reverse Proxy.<br />
                           </td>
                         </tr>
