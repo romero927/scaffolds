@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Grid, Row, Col, Panel, Table, Image } from 'react-bootstrap'
+import { Grid, Row, Col, Panel, Table, Image, Navbar, Nav } from 'react-bootstrap'
+import NavItem from './CustomReactBootstrap/NavItem'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar fixedTop bsClass="navbar" collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#home">kgromero.us</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight>
+              <NavItem href="#tech">Technical Skills</NavItem>
+              <NavItem href="#work">Work Experience</NavItem>
+              <NavItem href="#education">Education</NavItem>
+              <NavItem href="#about">About Me</NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
         <Grid>
           <Row>
             <Col xsHidden smHidden md={1} lg={1} />
@@ -16,6 +33,7 @@ class App extends Component {
                 </Panel>
                 <Panel>
                 <div className="App-body">
+                  <a name="tech"> </a>
                   <Panel collapsible defaultExpanded header="Technical Skills">
                     <Table bordered condensed>
                       <thead>
@@ -197,6 +215,7 @@ class App extends Component {
                       </tbody>
                     </Table>
                   </Panel>
+                  <a name="work"> </a>
                   <Panel collapsible defaultExpanded header="Work Experience">
                       <Table bordered condensed>
                       <thead>
@@ -378,6 +397,7 @@ class App extends Component {
                       </tbody>
                     </Table>
                   </Panel>
+                  <a name="education"> </a>
                   <Panel collapsible defaultExpanded header="Education">
                     <Table bordered condensed>
                       <thead>
@@ -429,6 +449,7 @@ class App extends Component {
                       </tbody>
                     </Table>
                   </Panel>
+                  <a name="about"> </a>
                   <Panel collapsible defaultExpanded header="About Me">
                     <Table bordered condensed>
                       <thead>

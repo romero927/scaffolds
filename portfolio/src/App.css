@@ -2,6 +2,7 @@
   text-align: center;
   /*background-color: #F9F9F9;*/
   height: 100%;
+  padding-top: 60px;
 }
 
 .Table-header
@@ -37,4 +38,12 @@ tbody > tr{
 
 .whiteanchor{
   color:white;
+}
+
+.navbar{
+  background-color: #252525;
+  color: white;
+  border-bottom-color: #606060;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
