@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Grid, Row, Col, Panel, Table, Image, Navbar, Nav } from 'react-bootstrap'
+import { Grid, Row, Col, Panel, Table, Image, Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap'
 import NavItem from './CustomReactBootstrap/NavItem'
 
 class App extends Component {
@@ -16,6 +16,11 @@ class App extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
+              <NavDropdown title="Resume" id="basic-nav-dropdown">
+                <MenuItem href="./kgromero.html">HTML</MenuItem>
+                <MenuItem href="./kgromero.pdf">PDF</MenuItem>
+                <MenuItem href="./kgromero.json">JSON</MenuItem>
+              </NavDropdown>
               <NavItem href="#tech">Technical Skills</NavItem>
               <NavItem href="#work">Work Experience</NavItem>
               <NavItem href="#education">Education</NavItem>
@@ -466,7 +471,8 @@ class App extends Component {
                           </td>
                           <td>
                               Hello! My name is Kyle Romero.<br/>
-                              I am a happily-married software developer living in Houston, Texas.<br/>
+                              I am a full-stack senior software developer living in Houston, Texas.<br/>
+                              I have a Bachelor's Degree in Computer Engineering from Texas Tech University<br/>
                               I have worked in the IT field since 2007 as a software engineer.<br/>
                               Currently, I am a team lead and senior developer at Worldwide Machinery.<br/>
                               My last two jobs I have been in a leadership role, helping to drive the success of the team. <br/>
@@ -517,7 +523,8 @@ class App extends Component {
                             <strong>Note</strong>
                             </td>
                           <td>
-                            This site was built using the fantastic Create-React-App and React-Bootstrap libraries.<br/>
+                            This site was built using the fantastic Create-React-App and React-Bootstrap libraries.<br />
+                            It is hosted on Digital Ocean using PM2 Serve and NGINX Reverse Proxy.<br/>
                           </td>
                         </tr>
                       </tbody>
