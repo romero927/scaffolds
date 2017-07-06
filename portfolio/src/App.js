@@ -34,7 +34,7 @@ class App extends Component {
             <Col xs={12} sm={12} md={10} lg={10}>
               <Panel>
                 <h1>Kyle Romero</h1>
-                <p>Senior Software Developer with 10 years experience living in Houston, TX.</p>
+                <p>Senior Software Developer with 10 years experience in IT. Currently living in Houston, TX.</p>
               </Panel>
               <Panel>
                 <div className="App-body">
@@ -99,7 +99,7 @@ class App extends Component {
                             <ul>
                               <li>I am very interested in Python, .NET Core, GOLang, Rust, Clojure, and Vue.js.</li>
                               <li>I try to keep up-to-date using aggregators such as Hacker News and Programming Sub-Reddits.</li>
-                              <li>I use Pluralsight to keep refreshed on various topics, and attempt small side projects to learn new concepts.</li>
+                              <li>I use Pluralsight to keep refreshed on various topics and attempt small side projects to learn new concepts.</li>
                             </ul>
                           </td>
                         </tr>
@@ -336,8 +336,8 @@ class App extends Component {
                               <li>Develop modern Mobile-first Web Application using React, Redux, Typescript (ES6), Node.js + Express + NPM, Babel, Webpack, and SASS</li>
                               <li>Maintain legacy ERP application using .NET Winforms (C#, MS SQL)</li>
                               <li>Implement and Maintain Project and DevOps Processes using: JIRA, Bitbucket (GIT), TeamCity, Trello, Slack, Lucidcharts</li>
-                              <li>Proactively identify process improvements, as well as project opportunities</li>
-                              <li>Maintain / Troubleshoot hardware infrastructure as needed (Windows / Ubuntu Servers)</li>
+                              <li>Proactively identify process improvements as well as project opportunities</li>
+                              <li>Maintain / troubleshoot hardware infrastructure as needed (Windows / Ubuntu Servers)</li>
                             </ul>
                           </td>
                         </tr>
@@ -382,7 +382,7 @@ class App extends Component {
                               <li>Helped manage both onshore and offshore, full time and contingent developers.</li>
                               <li>Helped to define and improve processes used on project, including development of a customized disciplined agile methodology and setting project timelines.</li>
                               <li>Administered Team Foundation Server (source and requirements).</li>
-                              <li>Managed Quality control and workloads for developers on project.</li>
+                              <li>Managed quality control and workloads for developers on project.</li>
                               <li>Managed release process for tool.</li>
                               <li>Worked with business to define requirements and develop architecture for project.</li>
                               <li>Familiar with all aspects of project, from both technical and business standpoints.</li>
