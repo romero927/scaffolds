@@ -19,6 +19,7 @@ class App extends Component {
               <NavDropdown title="Resume" id="basic-nav-dropdown">
                 <MenuItem href="./kgromero.html" target="_blank">HTML</MenuItem>
                 <MenuItem href="./kgromero.pdf" target="_blank">PDF</MenuItem>
+                <MenuItem href="./kgromero.doc" target="_blank">DOC</MenuItem>
                 <MenuItem href="./kgromero.json" target="_blank">JSON</MenuItem>
               </NavDropdown>
               <NavItem href="#about">About Me</NavItem>
