@@ -1911,17 +1911,17 @@
 	</w:docPr>
 	<w:body>
 		<wx:sect>
-            
+            {{ if .Basics.Name }}
 			<w:p wsp:rsidR="001A638D" wsp:rsidRPr="00141701" wsp:rsidRDefault="00141701" wsp:rsidP="00CF7A3B">
 				<w:pPr>
 					<w:pStyle w:val="Title"/>
 					<w:jc w:val="center"/>
 				</w:pPr>
 				<w:r wsp:rsidRPr="00141701">
-					<w:t>KYLE ROMERO</w:t>
+					<w:t>{{ toUpper .Basics.Name | html }}</w:t>
 				</w:r>
 			</w:p>
-			
+			{{ end }}
 			<w:tbl>
 				<w:tblPr>
 					<w:tblW w:w="5000" w:type="pct"/>
@@ -1941,7 +1941,7 @@
 							<w:tcW w:w="3500" w:type="pct"/>
 							<w:shd w:val="clear" w:color="auto" w:fill="auto"/>
 						</w:tcPr>
-						
+						{{ if or .Basics.Summary .Basics.Highlights }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
@@ -1998,24 +1998,41 @@
 								<w:t>ABOUT</w:t>
 							</w:r>
 						</w:p>
-						
+						{{ if .Basics.Summary }}
 						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Hello! My name is Kyle Romero. I am a full-stack senior software developer living in Houston, Texas. I have a Bachelor&#39;s Degree in Computer Engineering from Texas Tech University. I have worked in the IT field since 2007 as a software engineer, and currently am a team lead and senior developer at Worldwide Machinery. My last two jobs I have been in a leadership role, helping to drive the success of the team. I have extensive knowledge of all aspects of a succesful software project, and have used many different technologies over the years.</w:t>
+								<w:t>{{ html .Basics.Summary }}</w:t>
 							</w:r>
 						</w:p>
-						
-						
+						{{ end }}
+						{{ range .Basics.Highlights }}
+						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:pStyle w:val="ListParagraph"/>
+								<w:listPr>
+									<w:ilvl w:val="0"/>
+									<w:ilfo w:val="5"/>
+									<wx:t wx:val="•"/>
+									<wx:font wx:val="Calibri"/>
+								</w:listPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="337" w:hanging="337"/>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>{{ html . }}</w:t>
+							</w:r>
+						</w:p>
+						{{ end }}
 						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 						</w:p>
-						
-						
+						{{ end }}
+						{{ if .Work }}
 						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
@@ -2050,57 +2067,40 @@
 									<w:rFonts w:fareast="Calibri"/>
 									<wx:font wx:val="Calibri Light"/>
 								</w:rPr>
-								<w:t>EXPERIENCE</w:t>
+								<w:t>{{ if .WorkLabel }}{{ toUpper .WorkLabel | html }}{{ else }}EXPERIENCE{{ end }}</w:t>
 							</w:r>
 						</w:p>
-						
+						{{ range .Work }}
 						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:pStyle w:val="Heading2"/>
 								<w:spacing w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Senior Software Developer</w:t>
+								<w:t>{{ html .Position }}</w:t>
 							</w:r>
-							
+							{{ if .Company }}
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>, Worldwide Machinery</w:t>
+								<w:t>, {{ html .Company }}</w:t>
 							</w:r>
-							
-							
+							{{ end }}
+							{{ if .StartDate }}
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>, 4/2016 - Present</w:t>
+								<w:t>, {{ html .StartDate | MYYYY }} - {{ if .EndDate }}{{ html .EndDate | MYYYY }}{{ else }}Present{{ end }}</w:t>
 							</w:r>
-							
+							{{ end }}
 						</w:p>
-						
+						{{ if .Summary }}
 						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Heavy Machinery Rental and Sales Company</w:t>
+								<w:t>{{ html .Summary }}</w:t>
 							</w:r>
 						</w:p>
-						
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Manage project workflow using Agile Scrum methodology</w:t>
-							</w:r>
-						</w:p>
-						
+						{{ end }}
+						{{ range .Highlights }}
 						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:pStyle w:val="ListParagraph"/>
@@ -2114,612 +2114,91 @@
 								<w:ind w:left="337" w:hanging="337"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Manage junior developers&#39; workloads</w:t>
+								<w:t>{{ html . }}</w:t>
 							</w:r>
 						</w:p>
-						
+						{{ end }}
 						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
 							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
+							</w:pPr>
+						</w:p>
+						{{ end }}
+						{{ end }}
+						{{ if .AdditionalWork }}
+						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:rPr>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Develop modern ASP.NET MVC WebAPI</w:t>
+								<w:rPr>
+									<w:noProof/>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
+								<w:pict>
+									<v:shape id="Picture 4" o:spid="_x0000_i1030" type="#_x0000_t75" style="width:16.5pt;height:15.75pt;visibility:visible;mso-wrap-style:square">
+										<v:imagedata src="wordml://03000002.png" o:title=""/>
+									</v:shape>
+								</w:pict>
+							</w:r>
+							<w:r wsp:rsidR="003B0718" wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
+								<w:t> </w:t>
+							</w:r>
+							<w:r wsp:rsidR="005F4D59" wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:rStyle w:val="Heading1Char"/>
+									<w:rFonts w:fareast="Calibri"/>
+									<wx:font wx:val="Calibri Light"/>
+								</w:rPr>
+								<w:t>{{ if .AdditionalWorkLabel }}{{ toUpper .AdditionalWorkLabel | html }}{{ else }}ADDITIONAL EXPERIENCE{{ end }}</w:t>
 							</w:r>
 						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Develop modern Mobile-first Web Application using React, Redux, Typescript (ES6), Node.js + Express + NPM, Babel, Webpack, and SASS</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Maintain legacy ERP application using .NET Winforms (C#, MS SQL)</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Implement and Maintain Project and DevOps Processes using: JIRA, Bitbucket (GIT), TeamCity, Trello, Slack, Lucidcharts</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Proactively identify process improvements, as well as project opportunities</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Maintain / troubleshoot hardware infrastructure as needed (Windows / Ubuntu Servers)</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
+						{{ range .AdditionalWork }}
+						<w:p wsp:rsidR="005F4D59" wsp:rsidRPr="00235936" wsp:rsidRDefault="005F4D59" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:pStyle w:val="Heading2"/>
 								<w:spacing w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Technical Lead (IT Developer / Engineer III)</w:t>
+								<w:t>{{ html .Position }}</w:t>
 							</w:r>
-							
+							{{ if .Company }}
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>, HP Inc.</w:t>
+								<w:t>, {{ html .Company }}</w:t>
 							</w:r>
-							
-							
+							{{ end }}
+							{{ if .StartDate }}
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>, 12/2014 - 2/2016</w:t>
+								<w:t>, {{ html .StartDate | MYYYY }} - {{ if .EndDate }}{{ html .EndDate | MYYYY }}{{ else }}Present{{ end }}</w:t>
 							</w:r>
-							
+							{{ end }}
 						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
+						{{ if .Summary }}
+						<w:p wsp:rsidR="005F4D59" wsp:rsidRPr="00235936" wsp:rsidRDefault="005F4D59" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Consumer IT Products</w:t>
+								<w:t>{{ html .Summary }}</w:t>
 							</w:r>
 						</w:p>
-						
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Led development team working on enterprise level product quality / escalation management tool.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Helped manage both onshore and offshore, full time and contingent developers.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Helped to define and improve processes used on project, including development of a customized disciplined agile methodology and setting project timelines.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Administered Team Foundation Server (source and requirements).</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Managed quality control and workloads for developers on project.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Managed release process for tool.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Worked with business to define requirements and develop architecture for project.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Familiar with all aspects of project, from both technical and business standpoints.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>While working on .NET Applications, received exposure to Big Data technologies, such as Hadoop and HP Vertica, as well as Dashboarding Technologies, such as Qlikview and Tableau.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>During the year 2015, led team to successfully complete clone of our systems to be used on both sides of HP after the company split into two.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
+						{{ end }}
+						<w:p wsp:rsidR="005F4D59" wsp:rsidRPr="00235936" wsp:rsidRDefault="005F4D59" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="Heading2"/>
-								<w:spacing w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Software Developer (IT Developer / Engineer II)</w:t>
-							</w:r>
-							
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>, HP Inc.</w:t>
-							</w:r>
-							
-							
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>, 12/2011 - 12/2014</w:t>
-							</w:r>
-							
-						</w:p>
-						
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Worked on ASP.NET Web applications incorporating a 3-Tier approach.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Did work on all three tiers (MS SQL Database, VB.NET Middle tier object libraries, and ASP.NET + jQueryUI frontend).</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Project was managed using Agile Scrum methodology (Received Certified Scrum Master certification 2012).</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Source control system was Team Foundation Server.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="Heading2"/>
-								<w:spacing w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Software / Systems Engineer</w:t>
-							</w:r>
-							
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>, X-Fab Texas, Inc.</w:t>
-							</w:r>
-							
-							
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>, 1/2010 - 11/2011</w:t>
-							</w:r>
-							
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Pure-play Semiconductor Foundry</w:t>
-							</w:r>
-						</w:p>
-						
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Development of ASP.NET/C# Web applications to serve as frontends for MSSQL databases.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Developed .NET Web / Console / Winforms Applications.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Involved in Database Design. Administered Windows and Linux servers.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Designed Shell / Batch scripts. Developed C++ console applications.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Deployed machine monitoring system. Developed Inventory tracking system.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Deployed Documentation system to sites globally.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="Heading2"/>
-								<w:spacing w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>IT Intern</w:t>
-							</w:r>
-							
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>, X-Fab Texas, Inc.</w:t>
-							</w:r>
-							
-							
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>, 5/2007 - 12/2009</w:t>
-							</w:r>
-							
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Internship between TTU EE Department and X-Fab, Texas</w:t>
-							</w:r>
-						</w:p>
-						
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:pStyle w:val="ListParagraph"/>
-								<w:listPr>
-									<w:ilvl w:val="0"/>
-									<w:ilfo w:val="8"/>
-									<wx:t wx:val="•"/>
-									<wx:font wx:val="Calibri"/>
-								</w:listPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="337" w:hanging="337"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:t>Developed various internal software projects, including statistical analysis programs, format conversion software, and .NET web applications.</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-						</w:p>
-						
-						
-						
+						{{ end }}
+						{{ end }}
 					</w:tc>
 					<w:tc>
 						<w:tcPr>
@@ -2763,84 +2242,84 @@
 								<w:t>CONTACT</w:t>
 							</w:r>
 						</w:p>
-						
+						{{ if .Basics.Location.Address }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>9800 Pagewood Ln Apt 2102</w:t>
+								<w:t>{{ html .Basics.Location.Address }}</w:t>
 							</w:r>
 						</w:p>
-						
-						
+						{{ end }}
+						{{ if or .Basics.Location.City .Basics.Location.Region .Basics.Location.PostalCode }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
-							
+							{{ if .Basics.Location.City }}
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Houston, </w:t>
+								<w:t>{{ html .Basics.Location.City }}{{ if .Basics.Location.Region }}, {{ end }}</w:t>
 							</w:r>
-							
-							
+							{{ end }}
+							{{ if .Basics.Location.Region }}
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Texas </w:t>
+								<w:t>{{ html .Basics.Location.Region }} </w:t>
 							</w:r>
-							
-							
+							{{ end }}
+							{{ if .Basics.Location.PostalCode }}
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>77042</w:t>
+								<w:t>{{ html .Basics.Location.PostalCode }}</w:t>
 							</w:r>
-							
+							{{ end }}
 						</w:p>
-						
-						
+						{{ end }}
+						{{ if .Basics.Phone }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>(281) 857-9006</w:t>
+								<w:t>{{ html .Basics.Phone }}</w:t>
 							</w:r>
 						</w:p>
-						
-						
+						{{ end }}
+						{{ if .Basics.Email }}
 						<w:p wsp:rsidR="0023139C" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
-							<w:hlink w:dest="mailto:kgromero@gmail.com">
+							<w:hlink w:dest="mailto:{{ html .Basics.Email }}">
 								<w:r wsp:rsidR="0023139C" wsp:rsidRPr="00235936">
 									<w:rPr>
 										<w:rStyle w:val="Hyperlink"/>
 									</w:rPr>
-									<w:t>kgromero@gmail.com</w:t>
+									<w:t>{{ html .Basics.Email }}</w:t>
 								</w:r>
 							</w:hlink>
 						</w:p>
-						
-						
+						{{ end }}
+						{{ if .Basics.Website }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
-							<w:hlink w:dest="https://kgromero.us">
+							<w:hlink w:dest="{{ html .Basics.Website }}">
 								<w:r wsp:rsidR="0023139C" wsp:rsidRPr="00235936">
 									<w:rPr>
 										<w:rStyle w:val="Hyperlink"/>
 									</w:rPr>
-									<w:t>https://kgromero.us</w:t>
+									<w:t>{{ html .Basics.Website }}</w:t>
 								</w:r>
 							</w:hlink>
 						</w:p>
-						
+						{{ end }}
 						<w:p wsp:rsidR="0023139C" wsp:rsidRPr="00235936" wsp:rsidRDefault="0023139C" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 						</w:p>
-						
+						{{ range .Basics.Profiles }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
@@ -2849,54 +2328,33 @@
 								<w:rPr>
 									<w:b/>
 								</w:rPr>
-								<w:t>Linkedin: </w:t>
+								<w:t>{{ .Network }}: </w:t>
 							</w:r>
 							<w:r wsp:rsidR="0023139C" wsp:rsidRPr="00235936">
 								<w:t>  </w:t>
 							</w:r>
-							
-							<w:hlink w:dest="https://www.linkedin.com/in/kyleromero/">
+							{{ if .Url }}
+							<w:hlink w:dest="{{ .Url }}">
 								<w:r wsp:rsidRPr="00235936">
 									<w:rPr>
 										<w:rStyle w:val="Hyperlink"/>
 									</w:rPr>
-									<w:t>kyleromero</w:t>
+									<w:t>{{ .Username }}</w:t>
 								</w:r>
 							</w:hlink>
-							
-						</w:p>
-						
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-								<w:t>Github: </w:t>
-							</w:r>
+							{{ else }}
 							<w:r wsp:rsidR="0023139C" wsp:rsidRPr="00235936">
-								<w:t>  </w:t>
+								<w:t>{{ .Username }}</w:t>
 							</w:r>
-							
-							<w:hlink w:dest="https://github.com/romero927">
-								<w:r wsp:rsidRPr="00235936">
-									<w:rPr>
-										<w:rStyle w:val="Hyperlink"/>
-									</w:rPr>
-									<w:t>romero927</w:t>
-								</w:r>
-							</w:hlink>
-							
+							{{ end }}
 						</w:p>
-						
+						{{ end }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 						</w:p>
-						
+						{{ if .Skills }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
@@ -2934,7 +2392,7 @@
 								<w:t>SKILLS</w:t>
 							</w:r>
 						</w:p>
-						
+						{{ range .Skills }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
@@ -2948,7 +2406,7 @@
 									<w:b/>
 									<w:color w:val="5B9BD5"/>
 								</w:rPr>
-								<w:t>Languages:</w:t>
+								<w:t>{{ html .Name }}:</w:t>
 							</w:r>
 						</w:p>
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
@@ -2957,147 +2415,17 @@
 								<w:ind w:left="162"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-                                <w:t>C#, VB.NET, ASP.NET, Typescript,, ES5, ES2015</w:t>
+                                <w:t>{{ range $index, $element := .Keywords }}{{ if ne $index 0 }}, {{ end }}{{ . }}{{ end }}</w:t>
 							</w:r>
 						</w:p>
-						
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-								<w:t>Databases:</w:t>
-							</w:r>
-						</w:p>
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="162"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-                                <w:t>MSSQL</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-								<w:t>Scripting:</w:t>
-							</w:r>
-						</w:p>
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="162"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-                                <w:t>Bash, Powershell (Novice)</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-								<w:t>Frameworks:</w:t>
-							</w:r>
-						</w:p>
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="162"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-                                <w:t>.NET 4.5, .NET 3.5, .NET 2.0, ASP.NET MVC WebAPI, React, React-Router, Redux, Redux-Thunk, Webpack, Babel, SuperAgent, SCSS, Bootstrap, JQuery</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-								<w:t>Development Tools:</w:t>
-							</w:r>
-						</w:p>
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="162"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-                                <w:t>GIT (Bitbucket, GitKraken / Bash), TFS, SVN (TortoiseSVN), Visual Studio 2015, Visual Studio Code, SSMS, TeamCity, JIRA,  Trello, TFS, Windows 10/8.1/7, Linux (Ubuntu), MacOS Sierra, IIS, Node + NPM / YARN + Express + PM2, NGINX Reverse Proxy, Docker (Novice), Digital Ocean, LucidCharts</w:t>
-							</w:r>
-						</w:p>
-						
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-								<w:rPr>
-									<w:b/>
-									<w:color w:val="5B9BD5"/>
-								</w:rPr>
-								<w:t>Former Proficiencies:</w:t>
-							</w:r>
-						</w:p>
-						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
-							<w:pPr>
-								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
-								<w:ind w:left="162"/>
-							</w:pPr>
-							<w:r wsp:rsidRPr="00235936">
-                                <w:t>Java, C (Microcontroller), C++, Matlab, Verilog / VHDL, Perl</w:t>
-							</w:r>
-						</w:p>
-						
-						
+						{{ end }}
+						{{ end }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 						</w:p>
-						
+						{{ if .Education }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
@@ -3135,7 +2463,7 @@
 								<w:t>EDUCATION</w:t>
 							</w:r>
 						</w:p>
-						
+						{{ range .Education }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
@@ -3147,28 +2475,177 @@
 								<w:rPr>
 									<w:b/>
 								</w:rPr>
-								<w:t>Texas Tech University, 12/2009</w:t>
+								<w:t>{{ html .Institution }}{{ if .EndDate }}, {{ MYYYY .EndDate }}{{ end }}</w:t>
 							</w:r>
 						</w:p>
-						
+						{{ if .Area }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Computer Engineering</w:t>
+								<w:t>{{ html .Area }}</w:t>
 							</w:r>
 						</w:p>
-						
+						{{ end }}
 						<w:p wsp:rsidR="00141701" wsp:rsidRPr="00235936" wsp:rsidRDefault="00141701" wsp:rsidP="00235936">
 							<w:pPr>
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 						</w:p>
-						
-						
-						
-						
+						{{ end }}
+						{{ end }}
+						{{ if .Publications }}
+						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:rPr>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:noProof/>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
+								<w:pict>
+									<w:binData w:name="wordml://03000006.png" xml:space="preserve">iVBORw0KGgoAAAANSUhEUgAAABgAAAAWCAYAAADafVyIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjRDRDhBRUNFODUzOTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjRDRDhBRUNEODUzOTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+t3nwTAAAAPpJREFUeNrsVdENgjAQvRIGwAlkhI7QEdhARsAR2MARGMERGIERcALrBPVqXpujisGIHya85CVwPN7RS3hHzjnyZFTMjtkzneDIPDMbZgE2qI2JtodHFX1hbhPhHO0nWnhTKYodTqLFyQy+eExO5WtG6LSYQtCVChcPsFDRDJRSfjRX3O5Ya99oo+fiBvLFpTqPjH6MrcHWYGtAlCd/YIVMMaLsI2FAUgadgUYjXQMmuqeo+P8RATccdcC9RqTvE90FsT1gTIe5Jk5srLgHUsKkBosXz+WyqeFpFcT221HIiA5x7ndItoa5wHEyGvbOVzRv2fCEzRdxF2AAJhum6DIxWhIAAAAASUVORK5CYIJ=</w:binData>
+									<v:shape id="Picture 5" o:spid="_x0000_i1026" type="#_x0000_t75" style="width:18pt;height:16.5pt;visibility:visible;mso-wrap-style:square">
+										<v:imagedata src="wordml://03000006.png" o:title=""/>
+									</v:shape>
+								</w:pict>
+							</w:r>
+							<w:r wsp:rsidR="003B0718" wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
+								<w:t> </w:t>
+							</w:r>
+							<w:r wsp:rsidR="00345272" wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:rStyle w:val="Heading1Char"/>
+									<w:rFonts w:fareast="Calibri"/>
+									<wx:font wx:val="Calibri Light"/>
+								</w:rPr>
+								<w:t>{{ if .PublicationsLabel }}{{ html .PublicationsLabel }}{{ else }}PUBLICATIONS{{ end }}</w:t>
+							</w:r>
+						</w:p>
+						{{ range .Publications }}
+						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:pStyle w:val="ListParagraph"/>
+								<w:listPr>
+									<w:ilvl w:val="0"/>
+									<w:ilfo w:val="11"/>
+									<wx:t wx:val="·"/>
+									<wx:font wx:val="Symbol"/>
+								</w:listPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="162" w:hanging="180"/>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:i/>
+								</w:rPr>
+								<w:t>{{ html .Name }}</w:t>
+							</w:r>
+							{{ if .Publisher }}
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>, {{ html .Publisher }}</w:t>
+							</w:r>
+							{{ end }}
+							{{ if .ISBN }}
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>, ISBN {{ html .ISBN }}</w:t>
+							</w:r>
+							{{ end }}
+							{{ if .Summary }}
+							<w:r wsp:rsidRPr="00235936">
+								<w:br/>
+								<w:t>{{ html .Summary }}</w:t>
+							</w:r>
+							{{ end }}
+						</w:p>
+						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="162" w:hanging="180"/>
+							</w:pPr>
+						</w:p>
+						{{ end }}
+						{{ end }}
+						{{ if .AdditionalPublications }}
+						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00235936" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:rPr>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:noProof/>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
+								<w:pict>
+									<v:shape id="Picture 6" o:spid="_x0000_i1025" type="#_x0000_t75" style="width:18pt;height:16.5pt;visibility:visible;mso-wrap-style:square">
+										<v:imagedata src="wordml://03000006.png" o:title=""/>
+									</v:shape>
+								</w:pict>
+							</w:r>
+							<w:r wsp:rsidR="003B0718" wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:sz w:val="36"/>
+									<w:sz-cs w:val="36"/>
+								</w:rPr>
+								<w:t> </w:t>
+							</w:r>
+							<w:r wsp:rsidR="00345272" wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:rStyle w:val="Heading1Char"/>
+									<w:rFonts w:fareast="Calibri"/>
+									<wx:font wx:val="Calibri Light"/>
+								</w:rPr>
+								<w:t>{{ if .AdditionalPublicationsLabel }}{{ html .AdditionalPublicationsLabel }}{{ else }}ADDITIONAL PUBLICATIONS{{ end }}</w:t>
+							</w:r>
+						</w:p>
+						{{ range .AdditionalPublications }}
+						<w:p wsp:rsidR="00345272" wsp:rsidRPr="00235936" wsp:rsidRDefault="00345272" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:pStyle w:val="ListParagraph"/>
+								<w:listPr>
+									<w:ilvl w:val="0"/>
+									<w:ilfo w:val="7"/>
+									<wx:t wx:val="•"/>
+									<wx:font wx:val="Calibri"/>
+								</w:listPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="162" w:hanging="162"/>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:rPr>
+									<w:i/>
+								</w:rPr>
+								<w:t>{{ html .Name }}</w:t>
+							</w:r>
+							{{ if .Summary }}
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>, {{ html .Summary }}</w:t>
+							</w:r>
+							{{ end }}
+							{{ if .ISBN }}
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>, ISBN {{ html .ISBN }}</w:t>
+							</w:r>
+							{{ end }}
+						</w:p>
+						{{ end }}
+						{{ end }}
 					</w:tc>
 				</w:tr>
 			</w:tbl>

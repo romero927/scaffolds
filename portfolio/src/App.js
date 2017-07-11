@@ -265,6 +265,14 @@ class App extends Component {
                         </tr>
                         <tr>
                           <td>
+                            <strong>Diagramming</strong>
+                          </td>
+                          <td>
+                            Lucidcharts, Visio
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
                             <strong>OS</strong>
                           </td>
                           <td>

@@ -3,7 +3,7 @@
     "name": "Kyle Romero",
     "label": "Senior Software Developer",
     "email": "kgromero@gmail.com",
-    "phone": "(281)857-9006",
+    "phone": "(281) 857-9006",
     "website": "https://kgromero.us",
     "summary": "Hello! My name is Kyle Romero. I am a full-stack senior software developer living in Houston, Texas. I have a Bachelor's Degree in Computer Engineering from Texas Tech University. I have worked in the IT field since 2007 as a software engineer, and currently am a team lead and senior developer at Worldwide Machinery. My last two jobs I have been in a leadership role, helping to drive the success of the team. I have extensive knowledge of all aspects of a succesful software project, and have used many different technologies over the years.",
     "location": {
@@ -41,7 +41,7 @@
         "Maintain legacy ERP application using .NET Winforms (C#, MS SQL)",
         "Implement and Maintain Project and DevOps Processes using: JIRA, Bitbucket (GIT), TeamCity, Trello, Slack, Lucidcharts",
         "Proactively identify process improvements, as well as project opportunities",
-        "Maintain / Troubleshoot hardware infrastructure as needed (Windows / Ubuntu Servers)"                 
+        "Maintain / troubleshoot hardware infrastructure as needed (Windows / Ubuntu Servers)"                 
       ]
     },
     {
@@ -56,7 +56,7 @@
         "Helped manage both onshore and offshore, full time and contingent developers.",
         "Helped to define and improve processes used on project, including development of a customized disciplined agile methodology and setting project timelines.",
         "Administered Team Foundation Server (source and requirements).",
-        "Managed Quality control and workloads for developers on project.",
+        "Managed quality control and workloads for developers on project.",
         "Managed release process for tool.",
         "Worked with business to define requirements and develop architecture for project.",
         "Familiar with all aspects of project, from both technical and business standpoints.",
@@ -175,7 +175,7 @@
             "Visual Studio Code", "SSMS"
             ,"TeamCity" , "JIRA"," Trello", "TFS", "Windows 10/8.1/7", "Linux (Ubuntu)",
              "MacOS Sierra", "IIS", "Node + NPM / YARN + Express + PM2", "NGINX Reverse Proxy",
-             "Docker (Novice)", "Digital Ocean"
+             "Docker (Novice)", "Digital Ocean", "LucidCharts"
         ]
     },
     {

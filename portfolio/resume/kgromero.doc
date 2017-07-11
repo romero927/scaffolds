@@ -2216,7 +2216,7 @@
 								<w:ind w:left="337" w:hanging="337"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Maintain / Troubleshoot hardware infrastructure as needed (Windows / Ubuntu Servers)</w:t>
+								<w:t>Maintain / troubleshoot hardware infrastructure as needed (Windows / Ubuntu Servers)</w:t>
 							</w:r>
 						</w:p>
 						
@@ -2337,7 +2337,7 @@
 								<w:ind w:left="337" w:hanging="337"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Managed Quality control and workloads for developers on project.</w:t>
+								<w:t>Managed quality control and workloads for developers on project.</w:t>
 							</w:r>
 						</w:p>
 						
@@ -2801,7 +2801,7 @@
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>(281)857-9006</w:t>
+								<w:t>(281) 857-9006</w:t>
 							</w:r>
 						</w:p>
 						
@@ -3061,7 +3061,7 @@
 								<w:ind w:left="162"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-                                <w:t>GIT (Bitbucket, GitKraken / Bash), TFS, SVN (TortoiseSVN), Visual Studio 2015, Visual Studio Code, SSMS, TeamCity, JIRA,  Trello, TFS, Windows 10/8.1/7, Linux (Ubuntu), MacOS Sierra, IIS, Node + NPM / YARN + Express + PM2, NGINX Reverse Proxy, Docker (Novice), Digital Ocean</w:t>
+                                <w:t>GIT (Bitbucket, GitKraken / Bash), TFS, SVN (TortoiseSVN), Visual Studio 2015, Visual Studio Code, SSMS, TeamCity, JIRA,  Trello, TFS, Windows 10/8.1/7, Linux (Ubuntu), MacOS Sierra, IIS, Node + NPM / YARN + Express + PM2, NGINX Reverse Proxy, Docker (Novice), Digital Ocean, LucidCharts</w:t>
 							</w:r>
 						</w:p>
 						
