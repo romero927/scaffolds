@@ -322,7 +322,7 @@ class App extends Component {
                             <strong>Title</strong>
                           </td>
                           <td>
-                            Senior Software Developer
+                            Team Lead / Senior Software Developer
                           </td>
                         </tr>
                         <tr>
