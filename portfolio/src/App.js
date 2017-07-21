@@ -17,10 +17,40 @@ class App extends Component {
           <Navbar.Collapse>
             <Nav pullRight>
               <NavDropdown title="Resume" id="basic-nav-dropdown">
-                <MenuItem href="./kgromero.html" target="_blank">HTML</MenuItem>
-                <MenuItem href="./kgromero.pdf" target="_blank">PDF</MenuItem>
-                <MenuItem href="./kgromero.doc" target="_blank">DOC</MenuItem>
-                <MenuItem href="./kgromero.json" target="_blank">JSON</MenuItem>
+                <MenuItem href="./files/kgromero.html" target="_blank">HTML</MenuItem>
+                <MenuItem href="./files/kgromero.pdf" target="_blank">PDF</MenuItem>
+                <MenuItem href="./files/kgromero.doc" target="_blank">DOC</MenuItem>
+                <MenuItem href="./files/kgromero.json" target="_blank">JSON</MenuItem>
+              </NavDropdown>
+              <NavDropdown title="Portfolio" id="basic-nav-dropdown">
+                <NavDropdown title="Worldwide Machinery" id="basic-nav-dropdown">
+                  <MenuItem href="./files/Workflow.pdf" target="_blank">Team Workflow</MenuItem>
+                </NavDropdown>
+                <NavDropdown title="HP" id="basic-nav-dropdown">
+                  <MenuItem href="./files/SIOverview.pdf" target="_blank">Sudden Impact</MenuItem>
+                </NavDropdown>
+                <NavDropdown title="X-Fab" id="basic-nav-dropdown">
+                  <MenuItem href="./files/Internship.pdf" target="_blank">Internship Projects Overview</MenuItem>
+                  <MenuItem href="./files/PlasmaTraceSystem.pdf" target="_blank">Plasma Trace</MenuItem>
+                  <MenuItem href="./files/ChemicalTracking.pdf" target="_blank">Chemical Tracking</MenuItem>
+                  <MenuItem href="./files/MaskToolingManual.pdf" target="_blank">Mask Tooling Manual</MenuItem>
+                  <MenuItem href="./files/DeviceMTM.pdf" target="_blank">Device MTM</MenuItem>
+                  <MenuItem href="./files/MiscProjects.pdf" target="_blank">Misc. Projects</MenuItem>
+                  <MenuItem href="./files/OtherInformationAboutMe.pdf" target="_blank">Other Information</MenuItem>
+                </NavDropdown>
+                <NavDropdown title="Texas Tech" id="basic-nav-dropdown">
+                  <MenuItem href="./files/Lab1Project1.pdf" target="_blank">Lab 1 Project 1 PPT</MenuItem>
+                  <MenuItem href="./files/Lab1Project2Presentation.pdf" target="_blank">Lab 1 Project 2 PPT</MenuItem>
+                  <MenuItem href="./files/Lab1Project2.pdf" target="_blank">Lab 1 Project 2 DOC</MenuItem>
+                  <MenuItem href="./files/Lab2FinalPresentation.pdf" target="_blank">Lab 2 PPT</MenuItem>
+                  <MenuItem href="./files/Lab2FinalReport.pdf" target="_blank">Lab 2 DOC</MenuItem>
+                  <MenuItem href="./files/Lab3FinalPresentation.pdf" target="_blank">Lab 3 PPT</MenuItem>
+                  <MenuItem href="./files/Lab3FinalReport.pdf" target="_blank">Lab 3 DOC</MenuItem>
+                  <MenuItem href="./files/ProjectLabVFinalReport.pdf" target="_blank">Lab 4/5 DOC</MenuItem>
+                  <MenuItem href="./files/MicroprocessorArchitectureFinalProject.pdf" target="_blank">Microprocessor Architecture Final Project</MenuItem>
+                  <MenuItem href="./files/TrellisDesignforLHUCA.pdf" target="_blank">Misc. Engineering Project DOC</MenuItem>
+                  <MenuItem href="./files/Transcript_Kromero.pdf" target="_blank">Transcript</MenuItem>
+                </NavDropdown>
               </NavDropdown>
               <NavItem href="#about">About Me</NavItem>
               <NavItem href="#tech">Technical Skills</NavItem>
@@ -52,15 +82,15 @@ class App extends Component {
                       <tbody className="FiftyPercent">
                         <tr>
                           <td>
-                            <Image src="./kgromero.png" responsive thumbnail />
+                            <Image src="./files/kgromero.png" responsive thumbnail />
                           </td>
                           <td>
                             Hello! My name is Kyle Romero.
                             I am a full-stack senior software developer living in Houston, Texas.
-                            I have a Bachelor's Degree in Computer Engineering from Texas Tech University
+                            I have a Bachelor's Degree in Computer Engineering from Texas Tech University.
                             I have worked in the IT field since 2007 as a software engineer.
                             Currently, I am a team lead and senior developer at Worldwide Machinery.
-                            My last two jobs I have been in a leadership role, helping to drive the success of the team.
+                            At My last two jobs I have been in a leadership role, helping to drive the success of the team.
                             I have extensive knowledge of all aspects of a succesful software project, and have used many different technologies over the years.
                           </td>
                         </tr>
