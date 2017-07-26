@@ -25,9 +25,12 @@ class App extends Component {
               <NavDropdown title="Portfolio" id="basic-nav-dropdown">
                 <NavDropdown title="Worldwide Machinery" id="basic-nav-dropdown">
                   <MenuItem href="./files/Workflow.pdf" target="_blank">Team Workflow</MenuItem>
+                  <MenuItem href="./files/WWMMobile.png" target="_blank">Mobile Architecture</MenuItem>
+                  <MenuItem href="./files/WWMLandscape.png" target="_blank">App Landscape</MenuItem>
                 </NavDropdown>
                 <NavDropdown title="HP" id="basic-nav-dropdown">
-                  <MenuItem href="./files/SIOverview.pdf" target="_blank">Sudden Impact</MenuItem>
+                  <MenuItem href="./files/SIOverview.pdf" target="_blank">Sudden Impact Overview</MenuItem>
+                  <MenuItem href="./files/SIAL.png" target="_blank">Sudden Impact Architecture</MenuItem>
                 </NavDropdown>
                 <NavDropdown title="X-Fab" id="basic-nav-dropdown">
                   <MenuItem href="./files/Internship.pdf" target="_blank">Internship Projects Overview</MenuItem>
