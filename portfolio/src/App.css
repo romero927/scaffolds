@@ -5,6 +5,14 @@
   padding-top: 60px;
 }
 
+@media only screen 
+and (min-width: 768px) 
+and (max-width: 992px)  {
+  .App {
+    padding-top: 120px;
+  }
+}
+
 .Table-header
 {
    background-color: #606060;

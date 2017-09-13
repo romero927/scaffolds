@@ -92,7 +92,7 @@ class App extends Component {
                             I am a full-stack senior software developer living in Houston, Texas.
                             I have a Bachelor's Degree in Computer Engineering from Texas Tech University, and have worked in the IT field since 2007 as a software engineer.
                             Currently, I am a team lead and senior developer at Worldwide Machinery, and previously was a technical lead at HP.
-                            I have extensive knowledge of all aspects of a succesful software project, and have used many different technologies and methodologies over the years.
+                            I have extensive knowledge of all aspects of a successful software project, and have used many different technologies and methodologies over the years.
                           </td>
                         </tr>
                         <tr>
