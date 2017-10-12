@@ -26,7 +26,7 @@ class App extends Component {
                 <NavDropdown title="Worldwide Machinery" id="basic-nav-dropdown">
                   <MenuItem href="./files/Workflow.pdf" target="_blank">Team Workflow</MenuItem>
                   <MenuItem href="./files/WWMMobile.png" target="_blank">Mobile Architecture</MenuItem>
-                  <MenuItem href="./files/WWMLandscape.png" target="_blank">App Landscape</MenuItem>
+                  {/* <MenuItem href="./files/WWMLandscape.png" target="_blank">App Landscape</MenuItem> */}
                 </NavDropdown>
                 <NavDropdown title="HP" id="basic-nav-dropdown">
                   <MenuItem href="./files/SIOverview.pdf" target="_blank">Sudden Impact Overview</MenuItem>
@@ -339,6 +339,43 @@ class App extends Component {
                   </Panel>
                   <a name="work"> </a>
                   <Panel collapsible defaultExpanded header="Work Experience">
+                  <Table bordered condensed>
+                      <thead>
+                        <tr className="Table-header">
+                          <th colSpan="2">
+                            <strong><a className="whiteanchor" href="http://infrasourceus.com/">InfraSource / MEARS Group</a></strong>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <strong>Title</strong>
+                          </td>
+                          <td>
+                            Operations Technology Manager
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Dates</strong>
+                          </td>
+                          <td>
+                            10/2017 to Current
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Description</strong>
+                          </td>
+                          <td>
+                            <ul>
+                              <li>COMING SOON</li>
+                            </ul>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </Table>
                     <Table bordered condensed>
                       <thead>
                         <tr className="Table-header">
@@ -361,7 +398,7 @@ class App extends Component {
                             <strong>Dates</strong>
                           </td>
                           <td>
-                            4/2016 to Current
+                            4/2016 to 10/2017
                           </td>
                         </tr>
                         <tr>
