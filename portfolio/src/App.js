@@ -68,7 +68,7 @@ class App extends Component {
             <Col xs={12} sm={12} md={10} lg={10}>
               <Panel>
                 <h1>Kyle Romero</h1>
-                <p>Senior Software Developer with 10 years experience in IT. Currently living in Houston, TX.</p>
+                <p>Software Development Manager with 10 years experience in IT. Currently living in Houston, TX.</p>
               </Panel>
               <Panel>
                 <div className="App-body">
