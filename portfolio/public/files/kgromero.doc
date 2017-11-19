@@ -2004,7 +2004,7 @@
 								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>Hello! My name is Kyle Romero. I am a full-stack senior software developer living in Houston, Texas. I have a Bachelor&#39;s Degree in Computer Engineering from Texas Tech University, and have worked in the IT field since 2007 as a software engineer. Currently, I am a team lead and senior developer at Worldwide Machinery, and previously was a technical lead at HP. I have extensive knowledge of all aspects of a successful software project, and have used many different technologies and methodologies over the years.</w:t>
+								<w:t> Hello! My name is Kyle Romero. I am a software development manager, with full-stack senior software development experience, living in Houston, Texas. I have a Bachelor&#39;s Degree in Computer Engineering from Texas Tech University, and have worked in the IT field since 2007 in software engineering. Currently, I am a manager of operations technology, and previously was a team lead and senior developer at Worldwide Machinery, and a technical lead at HP. I have extensive knowledge of all aspects of a successful software project, and have used many different technologies and methodologies over the years.</w:t>
 							</w:r>
 						</w:p>
 						
@@ -2097,7 +2097,92 @@
 								<w:ind w:left="337" w:hanging="337"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-								<w:t>COMING SOON</w:t>
+								<w:t>Managing a team of internal and outsourced developers</w:t>
+							</w:r>
+						</w:p>
+						
+						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:pStyle w:val="ListParagraph"/>
+								<w:listPr>
+									<w:ilvl w:val="0"/>
+									<w:ilfo w:val="8"/>
+									<wx:t wx:val="•"/>
+									<wx:font wx:val="Calibri"/>
+								</w:listPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="337" w:hanging="337"/>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>Develop modern web application using Angular, HTML5, and CSS3; hosted on IIS</w:t>
+							</w:r>
+						</w:p>
+						
+						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:pStyle w:val="ListParagraph"/>
+								<w:listPr>
+									<w:ilvl w:val="0"/>
+									<w:ilfo w:val="8"/>
+									<wx:t wx:val="•"/>
+									<wx:font wx:val="Calibri"/>
+								</w:listPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="337" w:hanging="337"/>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>Develop RESTful api using ASP.NET MVC WebAPI</w:t>
+							</w:r>
+						</w:p>
+						
+						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:pStyle w:val="ListParagraph"/>
+								<w:listPr>
+									<w:ilvl w:val="0"/>
+									<w:ilfo w:val="8"/>
+									<wx:t wx:val="•"/>
+									<wx:font wx:val="Calibri"/>
+								</w:listPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="337" w:hanging="337"/>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>Manage DevOps, CICD, and PM processes using VSTS</w:t>
+							</w:r>
+						</w:p>
+						
+						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:pStyle w:val="ListParagraph"/>
+								<w:listPr>
+									<w:ilvl w:val="0"/>
+									<w:ilfo w:val="8"/>
+									<wx:t wx:val="•"/>
+									<wx:font wx:val="Calibri"/>
+								</w:listPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="337" w:hanging="337"/>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>Server administration (Windows Servers)</w:t>
+							</w:r>
+						</w:p>
+						
+						<w:p wsp:rsidR="00FD4449" wsp:rsidRPr="00235936" wsp:rsidRDefault="00FD4449" wsp:rsidP="00235936">
+							<w:pPr>
+								<w:pStyle w:val="ListParagraph"/>
+								<w:listPr>
+									<w:ilvl w:val="0"/>
+									<w:ilfo w:val="8"/>
+									<wx:t wx:val="•"/>
+									<wx:font wx:val="Calibri"/>
+								</w:listPr>
+								<w:spacing w:after="0" w:line="240" w:line-rule="auto"/>
+								<w:ind w:left="337" w:hanging="337"/>
+							</w:pPr>
+							<w:r wsp:rsidRPr="00235936">
+								<w:t>Architect and explore new technology solutions</w:t>
 							</w:r>
 						</w:p>
 						
@@ -3088,7 +3173,7 @@
 								<w:ind w:left="162"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-                                <w:t>.NET 4.5, .NET 3.5, .NET 2.0, ASP.NET MVC WebAPI, React, React-Router, Redux, Redux-Thunk, Webpack, Babel, SuperAgent, SCSS, Bootstrap, JQuery</w:t>
+                                <w:t>.NET 4.5, .NET 3.5, .NET 2.0, ASP.NET MVC WebAPI, Angular, React, React-Router, Redux, Redux-Thunk, Webpack, Babel, SuperAgent, SCSS, Bootstrap, JQuery</w:t>
 							</w:r>
 						</w:p>
 						
@@ -3114,7 +3199,7 @@
 								<w:ind w:left="162"/>
 							</w:pPr>
 							<w:r wsp:rsidRPr="00235936">
-                                <w:t>GIT (Bitbucket, GitKraken / Bash), TFS, SVN (TortoiseSVN), Visual Studio 2015, Visual Studio Code, SSMS, TeamCity, JIRA,  Trello, TFS, Windows 10/8.1/7, Linux (Ubuntu), MacOS Sierra, IIS, Node + NPM / YARN + Express + PM2, NGINX Reverse Proxy, Docker (Novice), Digital Ocean, LucidCharts</w:t>
+                                <w:t>GIT (Bitbucket, GitKraken / Bash), VSTS, SVN (TortoiseSVN), Visual Studio 2015, Visual Studio Code, SSMS, TeamCity, JIRA,  Trello, VSTS, Windows 10/8.1/7, Linux (Ubuntu), MacOS Sierra, IIS, Node + NPM / YARN + Express + PM2, NGINX Reverse Proxy, Docker (Novice), Digital Ocean, LucidCharts</w:t>
 							</w:r>
 						</w:p>
 						

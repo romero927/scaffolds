@@ -89,9 +89,9 @@ class App extends Component {
                           </td>
                           <td>
                             Hello! My name is Kyle Romero.
-                            I am a full-stack senior software developer living in Houston, Texas.
-                            I have a Bachelor's Degree in Computer Engineering from Texas Tech University, and have worked in the IT field since 2007 as a software engineer.
-                            Currently, I am a team lead and senior developer at Worldwide Machinery, and previously was a technical lead at HP.
+                            I am a software development manager, with full-stack senior software development experience, living in Houston, Texas.
+                            I have a Bachelor's Degree in Computer Engineering from Texas Tech University, and have worked in the IT field since 2007 in software engineering.
+                            Currently, I am a manager of operations technology, and previously was a team lead and senior developer at Worldwide Machinery, and a technical lead at HP.
                             I have extensive knowledge of all aspects of a successful software project, and have used many different technologies and methodologies over the years.
                           </td>
                         </tr>
@@ -239,6 +239,7 @@ class App extends Component {
                             <strong>Javascript</strong>
                           </td>
                           <td>
+                            Angular 1,
                             React,
                             React-Router,
                             Redux,
@@ -267,7 +268,7 @@ class App extends Component {
                             <strong>Source Control</strong>
                           </td>
                           <td>
-                            GIT (Bitbucket, GitKraken / Bash), TFS, SVN (TortoiseSVN)
+                            GIT (Bitbucket, GitKraken / Bash), VSTS, SVN (TortoiseSVN)
                           </td>
                         </tr>
                         <tr>
@@ -275,7 +276,7 @@ class App extends Component {
                             <strong>IDE</strong>
                           </td>
                           <td>
-                            Visual Studio 2015, Visual Studio Code, SSMS
+                            Visual Studio 2017, Visual Studio Code, SSMS
                           </td>
                         </tr>
                         <tr>
@@ -291,7 +292,7 @@ class App extends Component {
                             <strong>PM (Agile Scrum)</strong>
                           </td>
                           <td>
-                            JIRA, Trello, TFS
+                            JIRA, Trello, VSTS
                           </td>
                         </tr>
                         <tr>
@@ -370,7 +371,12 @@ class App extends Component {
                           </td>
                           <td>
                             <ul>
-                              <li>COMING SOON</li>
+                              <li>Managing a team of internal and outsourced developers</li>
+                              <li>Develop modern web application using Angular, HTML5, and CSS3; hosted on IIS</li>
+                              <li>Develop RESTful api using ASP.NET MVC WebAPI</li>
+                              <li>Manage DevOps, CICD, and PM processes using VSTS</li>
+                              <li>Server administration (Windows Servers)</li>
+                              <li>Architect and explore new technology solutions</li>
                             </ul>
                           </td>
                         </tr>
