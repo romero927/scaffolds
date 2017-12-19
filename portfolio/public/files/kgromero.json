@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Kyle Romero",
-    "label": "Senior Software Developer",
+    "label": "Software Development Manager",
     "email": "kgromero@gmail.com",
     "phone": "(281) 857-9006",
     "website": "https://kgromero.us",
@@ -28,7 +28,7 @@
   },
   "work": [
     {
-      "company": "InfraSource / MEARS Group",
+      "company": "InfraSource, A Quanta Services Company",
       "position": "Operations Technology Manager",
       "website": "http://www.infrasourceus.com",
       "startDate": "2017-10-16",
@@ -36,9 +36,10 @@
       "highlights": [
          "Managing a team of internal and outsourced developers",
          "Develop modern web application using Angular, HTML5, and CSS3; hosted on IIS",
-         "Develop RESTful api using ASP.NET MVC WebAPI",
+         "Develop RESTful API using ASP.NET MVC WebAPI",
          "Manage DevOps, CICD, and PM processes using VSTS",
          "Server administration (Windows Servers)",
+         "Azure Administration",
          "Architect and explore new technology solutions"          
       ]
     },
@@ -192,7 +193,7 @@
             "Visual Studio Code", "SSMS"
             ,"TeamCity" , "JIRA"," Trello", "VSTS", "Windows 10/8.1/7", "Linux (Ubuntu)",
              "MacOS Sierra", "IIS", "Node + NPM / YARN + Express + PM2", "NGINX Reverse Proxy",
-             "Docker (Novice)", "Digital Ocean", "LucidCharts"
+             "Docker (Novice)", "Azure", "Digital Ocean", "LucidCharts"
         ]
     },
     {

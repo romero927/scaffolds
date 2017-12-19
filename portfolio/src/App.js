@@ -332,7 +332,7 @@ class App extends Component {
                             <strong>Cloud</strong>
                           </td>
                           <td>
-                            Digital Ocean
+                            Azure, Digital Ocean
                           </td>
                         </tr>
                       </tbody>
@@ -344,7 +344,7 @@ class App extends Component {
                       <thead>
                         <tr className="Table-header">
                           <th colSpan="2">
-                            <strong><a className="whiteanchor" href="http://infrasourceus.com/">InfraSource / MEARS Group</a></strong>
+                            <strong><a className="whiteanchor" href="http://infrasourceus.com/">InfraSource, A Quanta Services Company</a></strong>
                           </th>
                         </tr>
                       </thead>
@@ -376,6 +376,7 @@ class App extends Component {
                               <li>Develop RESTful api using ASP.NET MVC WebAPI</li>
                               <li>Manage DevOps, CICD, and PM processes using VSTS</li>
                               <li>Server administration (Windows Servers)</li>
+                              <li>Azure Administration</li>
                               <li>Architect and explore new technology solutions</li>
                             </ul>
                           </td>
